@@ -29,7 +29,7 @@ public class RoomManagerImpl extends UnicastRemoteObject implements RoomManager 
     @Override
     public String book(int type, String name) throws RemoteException {
         if(type < 0 || type > 5){
-            return "Tipo de quarto invalido";
+            return "Tipo de quarto inválido";
         }
 
         RoomDAO roomDAO = RoomDAO.getInstance();
@@ -37,7 +37,7 @@ public class RoomManagerImpl extends UnicastRemoteObject implements RoomManager 
         ArrayList<Room> rooms = roomDAO.getRoomsAvailableBytype(type);
 
         if(rooms == null || rooms.size() == 0){
-            return "Este tipo de quarto não esta disponivel!";
+            return "Este tipo de quarto não está disponível!";
         }
 
         BookDAO bookDAO = BookDAO.getInstance();
@@ -46,7 +46,7 @@ public class RoomManagerImpl extends UnicastRemoteObject implements RoomManager 
 
         rooms.get(0).setReserved(true);
 
-        return "Reserva feita  com susseso";
+        return "Reserva feita com sucesso!";
     }
 
     @Override

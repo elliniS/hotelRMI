@@ -40,9 +40,9 @@ public class HotelClient{
                 }
             }
 
-            System.out.println("java HotelClient list <endereço do servidor> | para mostrar quartos disponiveis");
-            System.out.println("java HotelClient book <endereço do servidor> <tipo Quarto> <Nome do hospede> | efetuar reserva");
-            System.out.println("java HotelClient clientes <endereço do servidor> | lista de clientes hospedados");
+            System.out.println("java HotelClient list <Endereço do servidor> | Mostra quartos disponiveis");
+            System.out.println("java HotelClient book <Endereço do servidor> <tipo Quarto> <Nome do hospede> | Efetua reserva");
+            System.out.println("java HotelClient clientes <Endereço do servidor> | Lista os clientes hospedados");
         }
         catch (Exception e){
             System.out.println("Erro: " + e.getMessage());

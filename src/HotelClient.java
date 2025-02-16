@@ -6,9 +6,9 @@ public class HotelClient{
         try {
             if (args.length > 1) {
 
-                RoomManager manager = (RoomManager) Naming.lookup(String.format("rmi://%s:1099/HotelServer", args[0]));
+                RoomManager manager = (RoomManager) Naming.lookup(String.format("rmi://%s:1099/HotelServer", args[1]));
 
-                if (args[1].equals("list")) {
+                if (args[0].equals("list")) {
                     int[] rooms = manager.listRoomAvailable();
 
                     System.out.println("Quartos:");
@@ -20,7 +20,7 @@ public class HotelClient{
 
                     return;
                 }
-                else if (args[1].equals("book") && args.length == 4) {
+                else if (args[0].equals("book") && args.length == 4) {
                     int type= Integer.parseInt(args[2]);
 
                     String retorno = manager.book(type, args[3]);
@@ -28,7 +28,7 @@ public class HotelClient{
 
                     return;
                 }
-                else if (args[1].equals("clientes")) {
+                else if (args[0].equals("clientes")) {
                     ArrayList<String> clientes = manager.listClient();
 
                     System.out.println("Lista de clientes: ");
